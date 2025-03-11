@@ -1,13 +1,29 @@
-const express = require('express'); // Import Express
-const app = express(); // Create an Express app
-const PORT = process.env.PORT || 3000; // Define the port
+pipeline {
+    agent any
 
-// Define a simple route
-app.get('/', (req, res) => {
-    res.send('Hello, DevOps!');
-});
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/sumit511-pawar/simple_web_application.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                // Add build commands if needed (e.g., npm install, mvn package)
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Add test commands if available (e.g., npm test, pytest)
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Add deployment steps here (e.g., Docker, cloud deployment)
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/sumit511-pawar/simple_web_application.git'
+                git branch: 'main', url: 'https://github.com/sumit511-pawar/simple_web_application.git'
             }
         }
         stage('Build') {
