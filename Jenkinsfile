@@ -10,19 +10,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                // Add commands to build your app if needed
+                // Add build commands if needed (e.g., npm install, mvn package)
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add test commands if available
+                // Add test commands if available (e.g., npm test, pytest)
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Add deployment steps here (Docker, local server, cloud, etc.)
+                // Add deployment steps here (e.g., Docker, cloud deployment)
             }
         }
     }
